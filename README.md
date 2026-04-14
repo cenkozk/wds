@@ -1,29 +1,57 @@
-I did this project because OmniParser sometimes misses small icons or text on the screen. Enhanced via Laplacian Structure Detection (LSD) 
-### How to use this project
-You need to have Node.js and Python in your computer.
+# Hybrid WDS — Enhanced Screen Parsing via Laplacian Structure Detection (LSD)
 
-1. First,:
+OmniParser is great, but it sometimes misses small icons or text on screen. **Hybrid WDS** fixes that by layering Laplacian Structure Detection on top of OmniParser's output to catch what it leaves behind.
+
+> 🔵 Blue = OmniParser detections &nbsp;|&nbsp; 🔴 Red = Hybrid WDS additional detections
+
+---
+
+## Comparison
+
+| OmniParser alone | Hybrid WDS |
+|---|---|
+| ![](1.png) | ![](2.png) |
+
+![Full comparison](3.png)
+
+---
+
+## Requirements
+
+- [Node.js](https://nodejs.org/)
+- [Python](https://python.org/)
+
+---
+
+## Getting Started
+
+**1. Install JS dependencies**
 ```bash
 npm install
 ```
 
-2. The models are very big, so we don't put them in github. You must download them yourself using our script:
+**2. Download the AI models**
+
+The models are too large to include in the repo, so you'll need to grab them separately:
 ```bash
 cd OmniParser
 pip install -r requirements.txt
 python download_models.py
 ```
 
-3. Start the application:
+**3. Run the app**
 ```bash
 npm run tauri dev
 ```
 
-### Comparison Images
-Comparison between OmniParser and Hybrid WDS: (Blue is OmniParser, Red is Hybrid WDS)
+---
 
-![Comparison](1.png)
+## How It Works
 
-![Comparison](2.png)
+Hybrid WDS runs OmniParser as usual, then passes the result through a Laplacian Structure Detection layer that scans for edges and regions the first pass missed — particularly small icons, fine text, and low-contrast UI elements. The two sets of detections are merged and deduplicated into a single output.
 
-![Comparison](3.png)
+---
+
+## License
+
+MIT
