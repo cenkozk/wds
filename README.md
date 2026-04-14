@@ -8,7 +8,7 @@ OmniParser is great, but it sometimes misses small icons or text on screen. **Hy
 
 ## Comparison
 
-| OmniParser alone | Hybrid WDS |
+| WDS | WDS |
 |---|---|
 | ![](1.png) | ![](2.png) |
 
