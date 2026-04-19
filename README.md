@@ -15,6 +15,7 @@ OmniParser is great, but it sometimes misses small icons or text on screen. **Hy
 ![Full comparison](3.png)
 
 Example masking of a PC desktop with a gradient background.
+
 ![Full_mask](OmniParser/diag/diag_11_variance_filter.png)
 
 ---
